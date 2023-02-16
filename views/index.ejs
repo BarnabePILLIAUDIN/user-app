@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="style/index.css" />
+    <title>UserApp</title>
+  </head>
+  <body>
+    <section>
+      <h2>Add a new user</h2>
+      <form action="/addUser" method="post">
+        <label for="first">Firstname</label>
+        <input type="text" name="first" placeholder="Your first name" />
+        <label for="last">Lastname</label>
+        <input type="text" name="last" placeholder="Your last name" />
+        <button type="submit">Ajouter</button>
+      </form>
+    </section>
+    <section>
+      <table>
+        <thead>
+          <tr>
+            <td>Firstname</td>
+            <td>Lastname</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% data.forEach(({first,last}) => {%>
+          <tr>
+            <td><%=first%></td>
+            <td><%=last%></td>
+            <td><button>Remove</button></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </section>
+  </body>
+</html>
