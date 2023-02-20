@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="../style/index.css" />
+    <title>UserApp</title>
+  </head>
+  <body>
+    <section>
+      <h2>MODIFY A USER</h2>
+      <form action=<%=`/modify/${id}`%> method="post">
+        <label for="first">First name</label>
+        <input type="text" name="first" value="<%= first%>" />
+        <label for="last">Last name</label>
+        <input type="text" name="last" value="<%= last%>" />
+        <label for="age">Age</label>
+        <input type="number" name="age" id="age" value="<%= age%>" />
+        <label for="zipcode">Zip Code</label>
+        <input type="text" maxlength="5" name="zipcode" value="<%= zipcode%>" />
+        <button type="submit">Modify</button>
+      </form>
+    </section>
+  </body>
+</html>

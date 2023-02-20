@@ -14,18 +14,30 @@ section{
   h2{
     margin-top: 2%;
     text-align: center;
+    text-transform: uppercase;
   }
   form{
     width: 30%;
     display: flex;
     flex-direction: column;
     padding: 3%;
-    margin-left: 40%;  
+    margin-left: 35%;  
     label{
       margin: 3% 0;
     }
     button[type="submit"]{
       margin-top: 5%;
+      padding: 2%;
+      background: black;
+      color: white;
+      border:none;
+      border-radius: 30px;
+      transition: 0.5s;
+      &:hover{
+        transform: scale(1.2);
+        background: blue;
+        box-shadow: blue 0px 3px 20px 0px;
+      }
     }
     input{
       padding: 2%;
@@ -33,9 +45,41 @@ section{
   }
   table{
     border-collapse: collapse;
+    margin-top: 3%;
+    margin-left: 3%;
     tr{
       td{
-        border: 2px solid black;      
+        width: 110px;
+        border: 2px solid black;
+        padding: 2%;
+        form{
+          margin: 0;
+          width: 100%;
+          button{
+            background: black;
+            margin: 0;
+            padding: 15%;
+            transform: scale(1.1);
+            width: 100%;
+            color:white;
+            &:hover{
+              transform: scale(1.4);
+            }
+        }
+        .delete{
+          &:hover{
+            background: red;
+            box-shadow:red 0px 3px 20px 0px;
+          }
+
+        }
+        .modify{
+          &:hover{
+            background: orange;
+            box-shadow: orange 0px 3px 20px 0px;
+          }
+        }
+        }      
       }
     }
   }

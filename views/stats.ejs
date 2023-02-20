@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon" />
+    <title>User app Stats</title>
+  </head>
+  <body>
+    <h1>Welcome to stats page</h1>
+    <h3>Average age: <%= avgAge %></h3>
+    <h2>Oldests users</h2>
+    <table>
+      <th>
+        <tr>
+          <td>First name</td>
+          <td>Last name</td>
+          <td>Age</td>
+          <td>Zip code</td>
+        </tr>
+      </th>
+      <tbody>
+        <% oldests.forEach(({first,last,age,zipcode})=>{%>
+        <tr>
+          <td><%= first%></td>
+          <td><%= last%></td>
+          <td><%= age%></td>
+          <td><%= zipcode%></td>
+        </tr>
+        <%})%>
+      </tbody>
+    </table>
+    <h2>Youngests users</h2>
+    <table>
+      <th>
+        <tr>
+          <td>First name</td>
+          <td>Last name</td>
+          <td>Age</td>
+          <td>Zip code</td>
+        </tr>
+      </th>
+      <tbody>
+        <% youngests.forEach(({first,last,age,zipcode})=>{%>
+        <tr>
+          <td><%= first%></td>
+          <td><%= last%></td>
+          <td><%= age%></td>
+          <td><%= zipcode%></td>
+        </tr>
+        <%})%>
+      </tbody>
+    </table>
+    <h2>Départements</h2>
+    <table>
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Number of user</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% Object.entries(dep).forEach(([key,value])=>{ %>
+        <tr>
+          <td><%= key%></td>
+          <td><%= value%></td>
+        </tr>
+        <%})%>
+      </tbody>
+    </table>
+    <h2>Departement with most users</h2>
+    <table>
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Number of user</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% mostDep.forEach((element)=>{ const key = Object.keys(element)[0];
+        const value = Object.values(element)[0] %>
+        <tr>
+          <td><%= key%></td>
+          <td><%= value%></td>
+        </tr>
+        <%})%>
+      </tbody>
+    </table>
+  </body>
+</html>

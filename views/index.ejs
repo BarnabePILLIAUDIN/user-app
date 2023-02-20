@@ -12,27 +12,44 @@
     <section>
       <h2>Add a new user</h2>
       <form action="/addUser" method="post">
-        <label for="first">Firstname</label>
+        <label for="first">First name</label>
         <input type="text" name="first" placeholder="Your first name" />
-        <label for="last">Lastname</label>
+        <label for="last">Last name</label>
         <input type="text" name="last" placeholder="Your last name" />
-        <button type="submit">Ajouter</button>
+        <label for="age">Age</label>
+        <input type="number" name="age" id="age" placeholder="Your age"/>
+        <label for="zipcode">Zip Code</label>
+        <input type="text" maxlength="5" name="zipcode" placeholder="Zip code"/>
+        <button type="submit">Add</button>
       </form>
     </section>
     <section>
       <table>
         <thead>
           <tr>
-            <td>Firstname</td>
-            <td>Lastname</td>
+            <td>First name</td>
+            <td>Last name</td>
+            <td>Age</td>
+            <td>Zip Code</td>
           </tr>
         </thead>
         <tbody>
-          <% data.forEach(({first,last}) => {%>
+          <% data.forEach(({first,last,age,zipcode,_id}) => {%>
           <tr>
             <td><%=first%></td>
             <td><%=last%></td>
-            <td><button>Remove</button></td>
+            <td><%=age%></td>
+            <td><%=zipcode%></td>
+            <td>
+              <form method="post" action=<%=`/delUser/${_id}`%> >
+                <button type="submit" class="delete">Delete</button>
+              </form>
+            </td>
+            <td>
+              <form method="post" action=<%=`/modifyUser/${_id}` %>>
+                <button type="submit" class="modify">Modify</button>
+              </form>
+            </td>
           </tr>
           <% }); %>
         </tbody>

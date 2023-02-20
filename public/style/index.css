@@ -11,26 +11,69 @@ body {
 section h2 {
   margin-top: 2%;
   text-align: center;
+  text-transform: uppercase;
 }
 section form {
   width: 30%;
   display: flex;
   flex-direction: column;
   padding: 3%;
-  margin-left: 40%;
+  margin-left: 35%;
 }
 section form label {
   margin: 3% 0;
 }
 section form button[type=submit] {
   margin-top: 5%;
+  padding: 2%;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  transition: 0.5s;
+}
+section form button[type=submit]:hover {
+  transform: scale(1.2);
+  background: blue;
+  box-shadow: blue 0px 3px 20px 0px;
 }
 section form input {
   padding: 2%;
 }
 section table {
   border-collapse: collapse;
+  margin-top: 3%;
+  margin-left: 3%;
 }
 section table tr td {
+  width: 110px;
   border: 2px solid black;
+  padding: 2%;
+}
+section table tr td form {
+  margin: 0;
+  width: 100%;
+}
+section table tr td form button {
+  background: black;
+  margin: 0;
+  padding: 15%;
+  transform: scale(1.1);
+  width: 100%;
+  color: white;
+}
+section table tr td form button:hover {
+  transform: scale(1.4);
+}
+section table tr td form .delete:hover {
+  background: red;
+  box-shadow: red 0px 3px 20px 0px;
+}
+section table tr td form .modify:hover {
+  background: orange;
+  box-shadow: orange 0px 3px 20px 0px;
+}
+
+#section2 {
+  text-align: center;
 }/*# sourceMappingURL=index.css.map */

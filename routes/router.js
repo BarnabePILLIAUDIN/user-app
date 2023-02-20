@@ -13,6 +13,16 @@ router.get("/data", (req, res) => {
   })
 })
 
+router.get("/stats", controller.showStats)
+
 router.post("/addUser", controller.addUser)
+
+router.post("/delUser/:userId", controller.delUser)
+
+//ModifyUser brings to the form to put all the new informations
+router.post("/modifyUser/:userId", controller.modyifyUser)
+
+//ModyfyData modify the informations in the db with the ones that have been put in the form
+router.post("/modify/:userId", controller.modifyData)
 
 export default router
